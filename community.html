@@ -70,12 +70,52 @@
           <li>improve db/transaction apis</li>
           <li>GOS (the new Guillotina database)</li>
         </ul>
+        <h3>Sprint outcomes</h3>
+        <p>Guillotina server:
+          <ul>
+            <li>As Python 3.7 has context vars we’ve been able to replace aiotasks external package and frame logic to
+              hold request object and depend on python 3.7</li>
+            <li>We’ve decoupled transaction and task information from request with the context vars enabling to use
+              transactions out of a request allowing to go to a streaming protocol to work with guillotina objects.</li>
+            <li>In order to provide a better search experience we added pgcatalog (JSONB indexing) as official as
+              contrib package(comes ootb). With this feature indexing information is tied to transaction which allows to
+              search after creation without Elasticsearch ingesting delay</li>
+            <li>In order to be able to serve http2 we started an ASGI implementation so we can serve guillotina with
+              uvcorn and plan to drop aiohttp support at G6.</li>
+            <li>In order to provide cache headers on each HTTP request we are adding options to configure it on the
+              service decorator and provide purge subscription.</li>
+            <li>As a long time task we started to implement a DB for guillotina with rocks db and Rust so we can provide
+              full text search, indexing and storage on the same server.</li>
+            <li>We released Guillotina 5 alpha1 with all the changes.</li>
+          </ul>
+        </p>
+        <p>On the frontend side, we have been working on the Executioner (the Guillotina built-in admin interface):
+          <ul>
+            <li>First, we have upgraded the Angular project and its dependencies to Angular 7.</li>
+            <li>We have successfully experimented Cypress as an end-to-end testing solution. It is faster than
+              RobotFramework, easier to deploy. The only downside was the syntax (tests are written in JS), but by
+              connecting it to Cucumber, we have been able to use a very nice natural language syntax, very similar to
+              the RobotFramework.</li>
+            <li>We have added pagination support in the Executioner navigation tree (which allows to browser containers
+              with more than 20 items).</li>
+          </ul>
+        </p>
+        <p>We have also made some progress on other frontend topics:
+          <ul>
+            <li>We have upgraded the pastanaga-angular library to Angular 8,</li>
+            <li>The Volto compatibility with Guillotina has been improved, and testing has been fixed,</li>
+            <li>We have started an Angular library allying backend traversing and Redux state management</li>
+            <li>And we have implemented the first alpha version of mrs-developer (successor of mr-developer, allowing to
+              checkout Git repositories as dependencies in any NPM project)</li>
+          </ul>
+        </p>
       </article>
       <article>
         <h2>Past sprints</h2>
         <ul>
           <li>
-            <a href="https://medium.com/@bloodbare/guillotina-maturity-and-revolution-61a8b9fa06bc">Costa Brava sprint</a>, Girona, July 2018
+            <a href="https://medium.com/@bloodbare/guillotina-maturity-and-revolution-61a8b9fa06bc">Costa Brava
+              sprint</a>, Girona, July 2018
           </li>
           <li>Plone Conference, Tokyo, November 2018</li>
         </ul>
