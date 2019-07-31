@@ -1,9 +1,9 @@
 apiVersion: v1
 entries:
   guillotina-cms:
-  - created: "2019-06-22T17:47:45.043424+02:00"
+  - created: "2019-07-31T14:25:15.82055+02:00"
     description: Guillotina CMS
-    digest: b007453a734c6b58ec5cfb4ac7cd09bde220aadd36f83b7b3df1c532cbd28180
+    digest: f690239a1acfc0faf4801b5c714a6fbe691f8cda0bf33763b719685494a9e4a3
     icon: https://avatars0.githubusercontent.com/u/72034?s=200&v=4
     maintainers:
     - email: ramon@plone.org
@@ -14,4 +14,4 @@ entries:
     urls:
     - https://guillotina.io/charts/guillotina-cms-0.0.1.tgz
     version: 0.0.1
-generated: "2019-06-22T17:47:45.039042+02:00"
+generated: "2019-07-31T14:25:15.81837+02:00"
